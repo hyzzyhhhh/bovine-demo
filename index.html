@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>牛表观组数据库</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-strip">
+        <div class="brand-wrap">
+          <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div>
+            <div class="brand-title">牛表观组数据库</div>
+            <div class="brand-subtitle">牛表观组与多组学数据平台</div>
+          </div>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="主导航">
+        <a class="active" href="#home">首页</a>
+        <div class="nav-dropdown">
+          <button class="nav-trigger" type="button" aria-expanded="false">数据目录 <span class="nav-caret" aria-hidden="true"></span></button>
+          <div class="dropdown-menu"><a href="run.html">Run 测序数据</a></div>
+        </div>
+        <a href="#browser">基因组浏览器</a>
+        <a href="#gene">基因与区域</a>
+        <a href="#analysis">在线分析</a>
+        <a href="#downloads">数据下载 <span class="nav-caret" aria-hidden="true"></span></a>
+        <a href="#about">关于平台</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="portal-intro">
+      <section class="hero-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">牛表观组数据库</p>
+          <h1>探索牛的<em>表观组</em>与多组学数据。</h1>
+          <p class="hero-text">牛表观组数据库整合不同组织、品种、发育阶段和生物学条件下的公开测序数据，汇集 Run 元数据、样本与实验信息，以及标准化表观组轨道和关联多组学分析结果。</p>
+          <p class="hero-text">数据涵盖染色质可及性、组蛋白修饰、DNA 甲基化、三维基因组与转录表达，可按基因、基因组坐标或 Run / Experiment accession 检索，为调控元件发现、候选区域筛选及牛复杂性状研究提供数据参考。</p>
+        </div>
+        <div class="hero-art">
+          <img src="cattle-hero.jpg" width="5641" height="3761" alt="两头牛站在蓝天与草地之间的牧场中" />
+        </div>
+      </section>
+
+      <section class="search-band" id="catalog">
+        <article class="search-card">
+          <form id="quickSearch" class="quick-search">
+            <label class="sr-only" for="quickSearchInput">数据库搜索</label>
+            <div class="search-input-wrap">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input id="quickSearchInput" type="search" placeholder="在数据库中检索基因、基因组坐标或 Run / Experiment accession" />
+            </div>
+            <button class="button primary" type="submit">搜索</button>
+          </form>
+          <p class="search-examples">例如：SRR37700558；ENSBTAG00000000001；chr1:1-200000</p>
+          <p id="searchFeedback" class="search-feedback" aria-live="polite"></p>
+        </article>
+      </section>
+      </section>
+
+      <section class="stats-grid" aria-label="数据库概览">
+        <div class="stat-card"><span>研究项目</span><strong>128</strong><small>公开研究</small></div>
+        <div class="stat-card"><span>实验项目</span><strong>436</strong><small>多组学实验</small></div>
+        <div class="stat-card"><span>测序 Run</span><strong>2,941</strong><small>已整理元数据</small></div>
+        <div class="stat-card"><span>浏览器轨道</span><strong>8,762</strong><small>ARS-UCD2.0 及旧组装</small></div>
+      </section>
+
+      <section class="content-grid">
+        <article class="assay-card" id="analysis">
+          <div class="panel-heading"><div><div class="section-kicker">数据分布</div><h2>数据库中的实验类型</h2></div><a href="#catalog">查看全部 →</a></div>
+          <div class="assay-list">
+            <div class="assay-row"><div><span class="dot rna"></span>RNA-seq</div><strong>142</strong><div class="bar"><i style="width:82%"></i></div></div>
+            <div class="assay-row"><div><span class="dot atac"></span>ATAC-seq</div><strong>96</strong><div class="bar"><i style="width:58%"></i></div></div>
+            <div class="assay-row"><div><span class="dot chip"></span>ChIP-seq / CUT&amp;Tag</div><strong>118</strong><div class="bar"><i style="width:68%"></i></div></div>
+            <div class="assay-row"><div><span class="dot methyl"></span>WGBS / RRBS</div><strong>42</strong><div class="bar"><i style="width:32%"></i></div></div>
+            <div class="assay-row"><div><span class="dot hic"></span>Hi-C / 三维基因组</div><strong>38</strong><div class="bar"><i style="width:25%"></i></div></div>
+          </div>
+          <div class="legend"><span><i class="dot rna"></i>转录组</span><span><i class="dot atac"></i>染色质可及性</span><span><i class="dot chip"></i>染色质标记</span></div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="about"><div><strong>牛表观组数据库</strong><span>前端原型 · 演示数据</span></div><div>参考组装：<b>ARS-UCD2.0</b> · 当前版本：<b>2026.10</b></div></footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

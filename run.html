@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Run 测序数据 | 牛表观组数据库</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="brand-strip">
+        <div class="brand-wrap">
+          <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div>
+            <div class="brand-title">牛表观组数据库</div>
+            <div class="brand-subtitle">牛表观组与多组学数据平台</div>
+          </div>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <div class="nav-dropdown">
+          <button class="nav-trigger active" type="button" aria-expanded="false">数据目录 <span class="nav-caret" aria-hidden="true"></span></button>
+          <div class="dropdown-menu"><a href="run.html">Run 测序数据</a></div>
+        </div>
+        <a href="index.html#browser">基因组浏览器</a>
+        <a href="index.html#gene">基因与区域</a>
+        <a href="index.html#analysis">在线分析</a>
+        <a href="index.html#downloads">数据下载 <span class="nav-caret" aria-hidden="true"></span></a>
+        <a href="index.html#about">关于平台</a>
+      </nav>
+    </header>
+
+    <main id="run-page">
+      <div class="breadcrumb"><a href="index.html">首页</a><span>›</span><a href="index.html#catalog">数据目录</a><span>›</span><strong>Run 测序数据</strong></div>
+      <section class="run-page-intro">
+        <div>
+          <div class="section-kicker">数据目录 / RUN</div>
+          <h1>Run 测序数据</h1>
+          <p>按测序 Run 查看原始元数据、样本信息、文库信息、测序平台和质量状态。当前页面使用演示数据展示最终界面形式。</p>
+        </div>
+        <div class="run-page-actions"><a class="button ghost" href="index.html#catalog">返回数据目录</a><button class="button primary" type="button">下载当前清单</button></div>
+      </section>
+
+      <section class="run-overview" aria-label="Run 数据概览">
+        <div><span>Run 总数</span><strong>2,941</strong><small>已整理记录</small></div>
+        <div><span>关联实验</span><strong>436</strong><small>RNA-seq、ATAC-seq 等</small></div>
+        <div><span>公开数据</span><strong>2,706</strong><small>可直接下载</small></div>
+        <div><span>参考组装</span><strong>ARS-UCD2.0</strong><small>支持旧版本映射</small></div>
+      </section>
+
+      <section class="runs-card run-data-section" id="run-data">
+        <div class="panel-heading runs-heading"><div><div class="section-kicker">RUN 元数据列表</div><h2>测序 Run 浏览与筛选</h2></div><span class="table-note">点击任意一行查看详细信息</span></div>
+        <div class="table-tools">
+          <label class="table-search"><span>⌕</span><input id="runSearch" type="search" placeholder="按 Run、Experiment、组织或品种筛选……" /></label>
+          <select id="assayFilter"><option value="all">全部实验类型</option><option value="RNA-seq">RNA-seq</option><option value="ATAC-seq">ATAC-seq</option><option value="ChIP-seq">ChIP-seq</option><option value="WGBS">WGBS</option></select>
+          <select id="statusFilter"><option value="all">全部质控状态</option><option value="QC passed">质控通过</option><option value="Review">待审核</option></select>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Run</th><th>实验类型</th><th>样本</th><th>组织 / 品种</th><th>测序模式</th><th>Spot 数</th><th>质控状态</th><th></th></tr></thead>
+            <tbody id="runTableBody"></tbody>
+          </table>
+        </div>
+        <div class="table-footer"><span id="runCount">显示 6 / 2,941 个 Run</span><span>数据版本：2026.10</span></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div><strong>牛表观组数据库</strong><span>Run 测序数据目录 · 演示数据</span></div><div>参考组装：<b>ARS-UCD2.0</b> · 当前版本：<b>2026.10</b></div></footer>
+
+    <div id="runDrawer" class="drawer-backdrop" aria-hidden="true">
+      <aside class="run-drawer" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+        <button id="closeDrawer" class="close-button" type="button" aria-label="关闭">×</button>
+        <div class="section-kicker">RUN 详情</div><h2 id="drawerTitle">SRR37700558</h2><p id="drawerSubtitle" class="drawer-subtitle">RNA-seq · S1 · 雌性</p>
+        <div id="drawerBody" class="drawer-grid"></div>
+        <div class="drawer-actions"><button class="button primary" type="button">打开浏览器</button><button class="button ghost" type="button">下载元数据</button></div>
+      </aside>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
